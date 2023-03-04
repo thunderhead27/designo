@@ -6,6 +6,7 @@ import { FooterWithContact } from "./FooterWithContact";
 import { Footer } from "./Footer";
 import { Nav } from "./Nav";
 import { TalkAboutProject } from "./TalkAboutProject";
+import Head from "next/head";
 
 const OverlayContainer = styled.div`
 ${({ isOpen }) => (isOpen ? `background-color: rgba(0,0,0,0.5); filter: brightness(50%)` : ``)};
@@ -21,6 +22,9 @@ export const ContactLayout = ({ children }) => {
     const router = useRouter();
     return (
         <div tw="font-sans">
+            <Head>
+                <title>Designo</title>
+            </Head>
             <Nav isOpen={isOpen} setOpen={setOpen} />
             <Menu tw="bg-black text-white text-2xl py-12 px-6 gap-y-8" isOpen={isOpen}>
                 <Link href="/ourcompany">OUR COMPANY</Link>
